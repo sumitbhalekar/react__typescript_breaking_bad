@@ -1,15 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { Provider } from 'react-redux';
+import {
+  BrowserRouter, Route, Routes
+} from "react-router-dom";
 import App from './App';
+import './index.css';
+import store from './redux';
 import reportWebVitals from './reportWebVitals';
+import CharacterDetails from './screens/CharacterDetails/CharacterDetails';
+import FavouriteCharacters from './screens/FavouriteCharatcers/FavouriteCharacters';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="CharacterDetails" element={<CharacterDetails />} />
+          <Route path="FavouriteCharacters" element={<FavouriteCharacters />} />
+        </Routes>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

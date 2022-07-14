@@ -1,0 +1,70 @@
+.bodyAnd{
+    padding: 50px;
+}
+.charDetails{
+    display: table;
+    /* vertical-align: middle; */
+}
+.charDetailsText{
+    display: table;
+    vertical-align: baseline;
+}
+.mainCard{
+display: block;
+}
+.charDetailsSub{
+    display: table-cell;
+    vertical-align: middle;
+}
+.charDetailsDate{
+    display: table-cell;
+    vertical-align: middle;
+}
+.otherChars{
+    display: table-cell;
+}
+.nameMainDiv{
+    display: table-row;
+}
+.mainCharacterCard{
+        display: flex;
+    flex-direction: row;
+    background-color: #131313;
+    /* flexDirection: 'row', display: 'flex', backgroundColor: '#131313',  */
+}
+.icon {
+  /* height: 2rem; */
+  width: 1.5rem;
+  /* background-color: red; */
+  padding: 4px;
+  position: absolute;
+  box-sizing:border-box;
+  top:40%;
+  right: 30px;
+  /* left:10px; */
+  /* transform: translateY(-50%); */
+}
+.wrapper {
+  position:relative;
+}
+/* @media(max-width:800px) {
+  .mainCharacterCard {
+    flex-direction: column;
+  }
+} */
+input[type=search] {
+  width: 120px;
+  border: 2px  #232323;
+  border-radius: 3px;
+  border-color: #232323;
+  font-size: 16px;
+  background-color: #232323;
+  padding: 5px 5px 6px 5px;
+  -webkit-transition: width 0.7s ease-in;
+  transition: width 0.7s ease-in-out;
+}
+
+input[type=search]:focus {
+  width: 18%;
+  outline: none;
+}
