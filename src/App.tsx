@@ -60,7 +60,7 @@ function App() {
   return (
     <>
       <Header />
-      <div style={{ padding: 20, flexGrow: 1 }}>
+      <div style={{ padding: 20, }}>
         <Grid container spacing={3}>
           {
             searchedCharaters != '' ? searchedCharaters?.map((item: any, index: number) => {

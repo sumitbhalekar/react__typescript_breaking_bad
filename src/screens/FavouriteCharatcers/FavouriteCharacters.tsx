@@ -17,7 +17,6 @@ export default function FavouriteCharacters() {
     }
     const matches = useMediaQuery("(min-width:600px)");
 
-
     return (
         <>
             <HeaderFav />

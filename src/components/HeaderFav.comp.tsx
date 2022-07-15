@@ -15,16 +15,34 @@ export default function HeaderFav() {
         <AppBar position="static" style={{ backgroundColor: 'black' }}>
             <Toolbar>
                 <IconButton onClick={navigateToFav}>
-                    <img src={backArrow} alt="logo" style={{ height: 16, maxWidth: 20 }} />
+                    <img src={backArrow} alt="logo" style={styles.backIcon} />
                 </IconButton>
-                <IconButton sx={{ flexGrow: 1, justifyContent: 'center' }}>
-                    <img src={headerIcon} alt="logo" style={{ height: 36, maxWidth: 33 }} />
-                    <span style={{ fontSize: 24, color: '#FFFFFF', fontWeight: 700, marginLeft: 15 }}>The Breaking bad</span>
+                <IconButton sx={styles.headerMidDiv}>
+                    <img src={headerIcon} alt="logo" style={styles.headerIcon} />
+                    <span style={styles.textBreaking}>The Breaking bad</span>
                 </IconButton>
-                <span style={{ fontSize: 22, color: '#18CA75', fontWeight: 300 }}>Favourites</span>
+                <span style={styles.favText}>Favourites</span>
             </Toolbar>
         </AppBar>
     )
+}
+
+const styles = {
+    backIcon: {
+        height: 16, maxWidth: 20
+    },
+    headerMidDiv: {
+        flexGrow: 1, justifyContent: 'center'
+    },
+    textBreaking: {
+        fontSize: 24, color: '#FFFFFF', fontWeight: 700, marginLeft: 15
+    },
+    headerIcon: {
+        height: 36, maxWidth: 33
+    },
+    favText: {
+        fontSize: 22, color: '#18CA75', fontWeight: 300
+    }
 }
 
 

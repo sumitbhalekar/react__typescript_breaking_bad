@@ -58,7 +58,8 @@ export default function Header(props: any) {
                     showSearch ?
                         <input onChange={handleChange} type="search" placeholder="Search" /> : null
                 }
-                <div onClick={() => { setShowSearch(!showSearch) }} style={{ position: 'relative', padding: 5 }} className="icon">
+                <div onClick={() => { setShowSearch(!showSearch) }} onMouseEnter={() => { setShowSearch(true) }}
+                    style={{ position: 'relative', padding: 5 }} className="icon">
                     <img src={searchIcon} alt="logo" />
                 </div>
                 <IconButton onClick={navigateToFav}>
