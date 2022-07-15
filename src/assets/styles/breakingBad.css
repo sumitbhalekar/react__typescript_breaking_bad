@@ -1,56 +1,68 @@
-.bodyAnd{
-    padding: 50px;
+.bodyAnd {
+  padding: 50px;
 }
-.charDetails{
-    display: table;
-    /* vertical-align: middle; */
+
+.charDetails {
+  display: table;
+  /* vertical-align: middle; */
 }
-.charDetailsText{
-    display: table;
-    vertical-align: baseline;
+
+.charDetailsText {
+  display: table;
+  vertical-align: baseline;
 }
-.mainCard{
-display: block;
+
+.mainCard {
+  display: block;
 }
-.charDetailsSub{
-    display: table-cell;
-    vertical-align: middle;
+
+.charDetailsSub {
+  display: table-cell;
+  vertical-align: middle;
 }
-.charDetailsDate{
-    display: table-cell;
-    vertical-align: middle;
+
+.charDetailsDate {
+  display: table-cell;
+  vertical-align: middle;
 }
-.otherChars{
-    display: table-cell;
+
+.otherChars {
+  display: table-cell;
 }
-.mainCardView{
-    display: table-row;
+
+.mainCardView {
+  display: table-row;
 }
-.nameMainDiv{
-    display: table-row;
+
+.nameMainDiv {
+  display: table-row;
 }
-.mainCharacterCard{
-      display: table;
-        /* display: flex; */
-    flex-direction: row;
-    background-color: #131313;
-    /* flexDirection: 'row', display: 'flex', backgroundColor: '#131313',  */
+
+.mainCharacterCard {
+  display: table;
+  /* display: flex; */
+  flex-direction: row;
+  background-color: #131313;
+  /* flexDirection: 'row', display: 'flex', backgroundColor: '#131313',  */
 }
+
 .icon {
   /* height: 2rem; */
   width: 1.5rem;
   /* background-color: red; */
   padding: 4px;
   position: absolute;
-  box-sizing:border-box;
-  top:40%;
+  box-sizing: border-box;
+  top: 40%;
   right: 30px;
   /* left:10px; */
   /* transform: translateY(-50%); */
 }
+
 .wrapper {
-  position:relative;
+  position: relative;
 }
+
 /* @media(max-width:800px) {
   .mainCharacterCard {
     flex-direction: column;
@@ -58,7 +70,7 @@ display: block;
 } */
 input[type=search] {
   width: 120px;
-  border: 2px  #232323;
+  border: 2px #232323;
   border-radius: 3px;
   border-color: #232323;
   font-size: 16px;

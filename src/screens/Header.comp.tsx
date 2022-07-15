@@ -50,27 +50,36 @@ export default function Header(props: any) {
         <AppBar position="static" style={{ backgroundColor: 'black' }}>
             <Toolbar>
                 <IconButton >
-                    <img src={headerIcon} alt="logo" style={{ height: 36, maxWidth: 33 }} />
+                    <img src={headerIcon} alt="logo" style={styles.headerIcon} />
                 </IconButton>
-                <Typography sx={{ flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700 }} >The Breaking bad
+                <Typography sx={styles.headerText} >The Breaking bad
                 </Typography>
                 {
                     showSearch ?
                         <input onChange={handleChange} type="search" placeholder="Search" /> : null
                 }
-                <div onClick={() => { setShowSearch(!showSearch) }} style={{
-                    position: 'relative',
-                    // backgroundColor: '#232323',
-                    padding: 5
-                }} className="icon">
+                <div onClick={() => { setShowSearch(!showSearch) }} style={{ position: 'relative', padding: 5 }} className="icon">
                     <img src={searchIcon} alt="logo" />
                 </div>
                 <IconButton onClick={navigateToFav}>
-                    <img src={favIcon} alt="logo" style={{ height: 20, width: 22 }} />
+                    <img src={favIcon} alt="logo" style={styles.favIcon} />
                 </IconButton>
             </Toolbar>
         </AppBar>
     )
+}
+
+const styles = {
+    headerText: {
+        flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700
+    },
+    headerIcon: {
+        height: 36, maxWidth: 33
+    },
+    favIcon: {
+        height: 20, width: 22
+    }
+
 }
 
 

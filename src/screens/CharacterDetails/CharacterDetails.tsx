@@ -21,41 +21,39 @@ export default function CharacterDetails(props: any) {
         <div style={{ flexGrow: 1 }}>
             <div className='charDetails'>
                 <div className='charDetailsSub'>
-                    <div style={{ borderRadius: 5, display: 'flex', margin: 10, }} >
+                    <div style={styles.mainDiv}>
                         <div>
                             <div>
                                 <div style={{
-                                    // padding: 10,
                                     height: '75vh',
                                     width: '85vh',
                                     display: 'flex',
                                     background: `url(${charData.img})`,
                                     backgroundPosition: 'top',
                                     backgroundSize: 'cover',
-                                    // backgroundRepeat: 'no-repeat',
                                     opacity: 0.3
                                 }} />
-                                <div style={{ position: 'absolute', bottom: '90vh', left: '5vh', justifyContent: 'center' }} onClick={onBackClick}>
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: '90vh',
+                                    left: '5vh',
+                                    justifyContent: 'center'
+                                }} onClick={onBackClick}>
                                     <img src={backArrow} alt="backIcon" style={{ height: 10 }} />
                                 </div>
                                 <div style={{
-                                    height: '27vh', width: '26vh', borderRadius: 5,
+                                    height: '27vh', width: '26vh',
+                                    borderRadius: 5,
                                     position: 'absolute',
                                     bottom: '27vh',
                                     left: '32vh',
                                 }}>
-                                    <img src={charData.img}
-                                        alt="charIcon"
-                                        style={{
-                                            height: '28vh',
-                                            width: "21vh",
-                                            borderRadius: 5
-                                        }} />
+                                    <img src={charData.img} alt="charIcon" style={styles.innerImage} />
                                 </div>
                             </div>
                             <div style={{ textAlign: 'center' }}>
-                                <span style={{ fontSize: 48, color: '#FFFFFF', fontWeight: 700 }}>{charData.name}</span><br />
-                                <span style={{ fontSize: 22, color: '#FFFFFF', fontWeight: 300 }}>{charData.nickname}</span>
+                                <span style={styles.charName}>{charData.name}</span><br />
+                                <span style={styles.charNickName}>{charData.nickname}</span>
                             </div>
                         </div>
 
@@ -64,29 +62,24 @@ export default function CharacterDetails(props: any) {
                                 <div className='charDetailsSub'>
                                     <div style={{ padding: 10, }} className='charDetails'>
                                         <div className='charDetailsDate'>
-                                            <span style={{ fontSize: 20, color: '#18CA75', fontWeight: 500 }}>Potrayed</span><br />
-                                            <span style={{ fontSize: 16, color: '#FFFFFF', fontWeight: 300 }}>{charData.portrayed}</span>
+                                            <span style={styles.mainSideText}>Potrayed</span><br />
+                                            <span style={styles.secondText}>{charData.portrayed}</span>
                                         </div>
-                                        {/* <div className='charDetailsDate' >
-                                    <div >
-                                        <span style={{ fontSize: 14, fontFamily: 'Roboto', bottom: 100, color: '#FFFFFF', fontWeight: 300 }}>{charData.birthday}</span>
-                                    </div>
-                                </div> */}
                                     </div>
                                     <div style={{ padding: 10, }} >
-                                        <span style={{ fontSize: 20, color: '#18CA75', fontWeight: 500 }}>Occupation</span><br />
-                                        <span style={{ fontSize: 16, color: '#FFFFFF', fontWeight: 300 }}>{charData.occupation[0]}</span><br />
-                                        <span style={{ fontSize: 16, color: '#FFFFFF', fontWeight: 300 }}>{charData.occupation[1]}</span>
+                                        <span style={styles.mainSideText}>Occupation</span><br />
+                                        <span style={styles.secondText}>{charData.occupation[0]}</span><br />
+                                        <span style={styles.secondText}>{charData.occupation[1]}</span>
                                     </div>
                                     <div style={{ padding: 10 }} >
-                                        <span style={{ fontSize: 20, color: '#18CA75', fontWeight: 500 }}>Appeared in</span>
+                                        <span style={styles.mainSideText}>Appeared in</span>
                                         <div style={{
                                             display: 'flex'
                                         }}>
                                             {charData?.appearance?.map((item: number) => {
                                                 return (
                                                     <div>
-                                                        <h1 style={{ fontSize: 10, marginRight: 3, padding: 4, backgroundColor: '#1A1A1A', color: '#FFFFFF', fontWeight: 300 }}>{`Season ${item}`}</h1>
+                                                        <h1 style={styles.seasonText}>{`Season ${item}`}</h1>
                                                     </div>
                                                 )
                                             })}
@@ -96,20 +89,15 @@ export default function CharacterDetails(props: any) {
                             </div>
                             <div style={{ padding: 10 }} className='otherChars'>
                                 <div>
-                                    <span style={{ fontSize: 20, color: '#FFFFFF', fontWeight: 700 }}>Other characters</span><br />
+                                    <span style={styles.otherCharsHeading}>Other characters</span><br />
                                 </div>
-                                <div style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginTop: 5
-                                }}>
+                                <div style={styles.otherCharDiv}>
                                     {breakingBadData?.slice(indexValue + 1, indexValue + 4).map((item: any) => {
                                         return (
                                             <div >
-                                                <img src={item.img} alt="headerIcon" style={{ height: '18vh', width: "14vh", borderRadius: 5, marginRight: 30 }} /><br />
-                                                <span style={{ fontSize: 12, color: '#FFFFFF', fontWeight: 700 }}>{item.name}</span><br />
-                                                <span style={{ fontSize: 10, color: '#FFFFFF', fontWeight: 300 }}>{item.nickname}</span>
+                                                <img src={item.img} alt="headerIcon" style={styles.otherCharImage} /><br />
+                                                <span style={styles.otherCharName}>{item.name}</span><br />
+                                                <span style={styles.otherCharNickName}>{item.nickname}</span>
                                             </div>
                                         )
                                     })}
@@ -120,16 +108,66 @@ export default function CharacterDetails(props: any) {
                 </div>
                 <div style={{ top: '20vh', width: '18vh', position: 'absolute' }}>
                     <div className='charDetailsText'>
-                        <div className='charDetailsDate'><img src={birthdayIcon} alt="backIcon" style={{ marginBottom: 4, height: 15, }} />
+                        <div className='charDetailsDate'><img src={birthdayIcon} alt="backIcon" style={styles.birthdayIcon} />
                         </div>
                         <div className='charDetailsDate' style={{ marginLeft: 10 }}>
-                            <span style={{ fontSize: 18, bottom: 100, marginLeft: 10, color: '#FFFFFF', fontWeight: 300 }}>{charData.birthday}</span>
+                            <span style={styles.birthdayText}>{charData.birthday}</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div >
     )
+}
+
+const styles = {
+    mainDiv: {
+        borderRadius: 5, display: 'flex', margin: 10,
+    },
+    innerImage: {
+        height: '28vh',
+        width: "21vh",
+        borderRadius: 5
+    },
+    charName: {
+        fontSize: 48, color: '#FFFFFF', fontWeight: 700
+    },
+    charNickName: {
+        fontSize: 22, color: '#FFFFFF', fontWeight: 300
+    },
+    mainSideText: {
+        fontSize: 20, color: '#18CA75', fontWeight: 500
+    },
+    secondText: {
+        fontSize: 16, color: '#FFFFFF', fontWeight: 300
+    },
+    seasonText: {
+        fontSize: 10, marginRight: 3, padding: 4, backgroundColor: '#1A1A1A', color: '#FFFFFF', fontWeight: 300
+    },
+    otherCharsHeading: {
+        fontSize: 20, color: '#FFFFFF', fontWeight: 700
+    },
+    otherCharDiv: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 5
+    },
+    otherCharImage: {
+        height: '18vh', width: "14vh", borderRadius: 5, marginRight: 30
+    },
+    otherCharName: {
+        fontSize: 12, color: '#FFFFFF', fontWeight: 700
+    },
+    otherCharNickName: {
+        fontSize: 10, color: '#FFFFFF', fontWeight: 300
+    },
+    birthdayText: {
+        fontSize: 18, bottom: 100, marginLeft: 10, color: '#FFFFFF', fontWeight: 300
+    },
+    birthdayIcon: {
+        marginBottom: 4, height: 15,
+    }
 }
 
 
