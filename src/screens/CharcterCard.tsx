@@ -18,27 +18,37 @@ export default function CharacterCard(props: any) {
     return (
         <div >
             <div className="mainCharacterCard">
-                <div style={{ flexDirection: 'row', display: 'flex', }} onClick={navigateTo}>
-                    <div style={{ height: '22vh', width: '22vh', borderRadius: 5, }} >
+                <div style={{ flexDirection: 'row', display: 'flex', }} className="mainCardView">
+                    <div style={{ height: '27vh', width: '26vh', borderRadius: 5 }} onClick={navigateTo}>
                         <div style={{ padding: 10, }}>
-                            <img src={charData.img} alt="headerIcon" style={{ borderRadius: 5, height: '20vh', width: "20vh" }} />
+                            <img src={charData.img} alt="headerIcon" style={{
+                                display: 'flex',
+                                borderRadius: 5,
+                                // height: 'auto',
+                                maxHeight: '24vh',
+                                // width: 'auto',
+                                maxWidth: '24vh'
+                            }} />
                         </div>
                     </div>
-                    <div style={{ padding: 10, width: '25vh' }} >
-                        <span style={{ fontSize: 24, fontFamily: 'Roboto', color: '#FFFFFF', fontWeight: 500 }}>{charData.name}</span><br />
+                    <div style={{ padding: 10, width: '26vh' }} onClick={navigateTo}>
+                        <span style={{ fontSize: 24, color: '#FFFFFF', fontWeight: 500 }}>{charData.name}</span><br />
                         <div style={{ paddingTop: 10, }}>
-                            <span style={{ fontSize: 18, paddingTop: 20, color: '#FFFFFF', fontFamily: 'Roboto', fontWeight: 300 }}>{charData.nickname}</span><br />
+                            <span style={{ fontSize: 18, paddingTop: 20, color: '#FFFFFF', fontWeight: 300 }}>{charData.nickname}</span><br />
                         </div>
                         <div style={{ paddingTop: 10, }}>
-                            <span style={{ fontSize: 14, color: '#18CA75', fontFamily: 'Roboto', fontWeight: 300 }}>{"Potrayed    "}</span>
-                            <span style={{ fontSize: 14, color: '#FFFFFF', fontFamily: 'Roboto', fontWeight: 300 }}>{charData.portrayed}</span>
+                            <span style={{ fontSize: 14, color: '#18CA75', fontWeight: 300 }}>{"Potrayed"}</span>
+                            <span style={{ fontSize: 14, color: '#FFFFFF', paddingLeft: 15, fontWeight: 300 }}>{charData.portrayed}</span>
                         </div>
                     </div>
+                    <div onClick={props.onPressFav} style={{ width: '13vh', }} >
+                        <img src={props.showFavorites ? favIcon : primaryFav} alt="favPrimaryIcon" style={{ height: 35, width: '18vh', marginTop: 15 }} />
+                    </div>
                 </div>
-                <div onClick={props.onPressFav}>
-                    <img src={props.showFavorites ? favIcon : primaryFav} alt="favPrimaryIcon" style={{ height: 35, width: 35, marginTop: 15 }} />
-                </div>
+
             </div>
+
+
         </div>
     )
 }

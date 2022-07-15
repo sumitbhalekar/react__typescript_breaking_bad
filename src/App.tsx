@@ -50,7 +50,8 @@ function App() {
       <Grid item xs={6} sm={4}
         direction="row"
         maxWidth="lg"
-        margin={matches ? "auto auto" : "auto"}>
+      // margin={matches ? "auto auto" : "auto"}
+      >
         <CharacterCard props={item} index={index} onPressFav={() => { addFavourites(item) }} showFavorites={(favourites?.filter((element: any) => element.char_id === item.char_id).length === 0) ? null : true} />
       </Grid>
     )

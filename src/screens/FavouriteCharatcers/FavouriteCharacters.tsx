@@ -21,14 +21,15 @@ export default function FavouriteCharacters() {
     return (
         <>
             <HeaderFav />
-            <div style={{ padding: 20, flexGrow: 1 }}>
+            <div style={{ padding: 20 }}>
                 <Grid container spacing={3} >
                     {favourites?.map((item: object, index: number) => {
                         return (
                             <Grid item xs={6} sm={4}
                                 direction="row"
                                 maxWidth="lg"
-                                margin={matches ? "auto auto" : "auto"}>
+                            // margin={matches ? "auto auto" : "auto"}
+                            >
                                 <CharacterCard props={item} index={index} onPressFav={() => { removeFavourites(item) }} showFavorites={true} />
                             </Grid>
                         )

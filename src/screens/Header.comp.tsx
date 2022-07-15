@@ -52,7 +52,7 @@ export default function Header(props: any) {
                 <IconButton >
                     <img src={headerIcon} alt="logo" style={{ height: 36, maxWidth: 33 }} />
                 </IconButton>
-                <Typography sx={{ flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontFamily: 'Roboto', fontWeight: 700 }} >The Breaking bad
+                <Typography sx={{ flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700 }} >The Breaking bad
                 </Typography>
                 {
                     showSearch ?

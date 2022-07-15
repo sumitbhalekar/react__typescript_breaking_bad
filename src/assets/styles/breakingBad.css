@@ -23,11 +23,15 @@ display: block;
 .otherChars{
     display: table-cell;
 }
+.mainCardView{
+    display: table-row;
+}
 .nameMainDiv{
     display: table-row;
 }
 .mainCharacterCard{
-        display: flex;
+      display: table;
+        /* display: flex; */
     flex-direction: row;
     background-color: #131313;
     /* flexDirection: 'row', display: 'flex', backgroundColor: '#131313',  */
