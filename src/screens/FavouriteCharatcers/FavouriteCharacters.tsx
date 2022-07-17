@@ -20,20 +20,22 @@ export default function FavouriteCharacters() {
     return (
         <>
             <HeaderFav />
-            <div style={{ padding: 20 }}>
-                <Grid container spacing={3} >
-                    {favourites?.map((item: object, index: number) => {
-                        return (
-                            <Grid item xs={6} sm={4}
-                                direction="row"
-                                maxWidth="lg"
-                            // margin={matches ? "auto auto" : "auto"}
-                            >
-                                <CharacterCard props={item} index={index} onPressFav={() => { removeFavourites(item) }} showFavorites={true} />
-                            </Grid>
-                        )
-                    })}
-                </Grid>
+            <div style={{ padding: 20, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {/* <Grid container spacing={3} > */}
+                {favourites?.map((item: object, index: number) => {
+                    return (
+                        // <Grid item xs={6} sm={4}
+                        //     direction="row"
+                        //     maxWidth="lg"
+                        // margin={matches ? "auto auto" : "auto"}
+                        // >
+                        <div style={{ padding: 10 }}>
+                            <CharacterCard props={item} index={index} onPressFav={() => { removeFavourites(item) }} showFavorites={true} />
+                        </div>
+                        // </Grid>
+                    )
+                })}
+                {/* </Grid> */}
             </div>
         </>);
 }

@@ -1,7 +1,3 @@
-import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import axios from "axios";
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
@@ -47,32 +43,29 @@ export default function Header(props: any) {
         });
     }
     return (
-        <AppBar position="static" style={{ backgroundColor: 'black' }}>
-            <Toolbar>
-                <IconButton >
-                    <img src={headerIcon} alt="logo" style={styles.headerIcon} />
-                </IconButton>
-                <Typography sx={styles.headerText} >The Breaking bad
-                </Typography>
-                {
-                    showSearch ?
-                        <input onChange={handleChange} type="search" placeholder="Search" /> : null
-                }
-                <div onClick={() => { setShowSearch(!showSearch) }} onMouseEnter={() => { setShowSearch(true) }}
-                    style={{ position: 'relative', padding: 5 }} className="icon">
-                    <img src={searchIcon} alt="logo" />
-                </div>
-                <IconButton onClick={navigateToFav}>
+        <div className="header" style={{ margin: 10, marginRight: 30, marginLeft: 30 }}>
+            <img src={headerIcon} alt="logo" style={styles.headerIcon} />
+            <span style={styles.headerText}>The Breaking bad</span>
+            {
+                showSearch ?
+                    <input onChange={handleChange} type="search" placeholder="Search" /> : null
+            }
+            <div onClick={() => { setShowSearch(!showSearch) }} onMouseEnter={() => { setShowSearch(true) }}
+                style={{ position: 'relative', padding: 7 }} className="icon">
+                <img src={searchIcon} alt="logo" />
+            </div>
+            <div className="headerIn">
+                <div className="header-right1" onClick={navigateToFav} style={{ paddingTop: 8 }}>
                     <img src={favIcon} alt="logo" style={styles.favIcon} />
-                </IconButton>
-            </Toolbar>
-        </AppBar>
+                </div>
+            </div>
+        </div>
     )
 }
 
 const styles = {
     headerText: {
-        flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700
+        flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700, paddingLeft: 10
     },
     headerIcon: {
         height: 36, maxWidth: 33
@@ -80,8 +73,4 @@ const styles = {
     favIcon: {
         height: 20, width: 22
     }
-
 }
-
-
-

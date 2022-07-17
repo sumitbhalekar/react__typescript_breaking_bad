@@ -1,6 +1,3 @@
-import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
-import Toolbar from "@mui/material/Toolbar";
 import { useNavigate } from "react-router-dom";
 import backArrow from '../assets/svg/backArrow.svg';
 import headerIcon from '../assets/svg/headerIcon.svg';
@@ -12,22 +9,27 @@ export default function HeaderFav() {
         navigation("/");
     }
     return (
-        <AppBar position="static" style={{ backgroundColor: 'black' }}>
-            <Toolbar>
-                <IconButton onClick={navigateToFav}>
-                    <img src={backArrow} alt="logo" style={styles.backIcon} />
-                </IconButton>
-                <IconButton sx={styles.headerMidDiv}>
-                    <img src={headerIcon} alt="logo" style={styles.headerIcon} />
-                    <span style={styles.textBreaking}>The Breaking bad</span>
-                </IconButton>
-                <span style={styles.favText}>Favourites</span>
-            </Toolbar>
-        </AppBar>
+        <div className="header" style={{ margin: 10, marginRight: 30, marginLeft: 30 }}>
+            <div onClick={navigateToFav} style={{ paddingLeft: 10 }}>
+                <img src={backArrow} alt="logo" style={styles.backIcon} />
+            </div>
+            <div style={{ textAlign: 'center', flexGrow: 1 }}>
+                <img src={headerIcon} alt="logo" style={styles.headerIcon} />
+                <span style={styles.headerText}>The Breaking bad</span>
+            </div>
+            <div className="headerIn">
+                <div className="header-right1" style={{ paddingRight: 10 }}>
+                    <span style={styles.favText}>Favourites</span>
+                </div>
+            </div>
+        </div>
     )
 }
 
 const styles = {
+    headerText: {
+        flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700, paddingLeft: 10, marginTop: 10
+    },
     backIcon: {
         height: 16, maxWidth: 20
     },

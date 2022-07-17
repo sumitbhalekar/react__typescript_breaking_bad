@@ -47,7 +47,7 @@
 }
 
 .icon {
-  /* height: 2rem; */
+  height: 1rem;
   width: 1.5rem;
   /* background-color: red; */
   padding: 4px;
@@ -74,6 +74,7 @@ input[type=search] {
   border-radius: 3px;
   border-color: #232323;
   font-size: 16px;
+  color: white;
   background-color: #232323;
   padding: 5px 5px 6px 5px;
   -webkit-transition: width 0.7s ease-in;
@@ -83,4 +84,51 @@ input[type=search] {
 input[type=search]:focus {
   width: 18%;
   outline: none;
+}
+
+
+
+
+
+
+.header {
+  overflow: hidden;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+}
+
+.headerIn {
+  /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  /* padding: 10px 10px; */
+}
+
+.header-left {
+  text-align: left;
+  float: left;
+}
+
+.header-left1 {
+  display: flex;
+  /* text-align: left;
+  float: left; */
+}
+
+.header-right {
+  /* text-align: right; */
+  float: right;
+  margin-left: auto;
+}
+
+.header-right1 {
+  display: flex;
+  /* text-align: right; */
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header-right {
+    float: none;
+  }
 }

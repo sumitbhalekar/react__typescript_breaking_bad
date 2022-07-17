@@ -1,4 +1,3 @@
-import { Grid, useMediaQuery } from '@mui/material';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -44,24 +43,21 @@ function App() {
       });
     }
   }
-  const matches = useMediaQuery("(min-width:600px)");
   const renderCardView = (item: any, index: number) => {
     return (
-      <Grid item xs={6} sm={4}
-        direction="row"
-        maxWidth="lg"
-      // margin={matches ? "auto auto" : "auto"}
-      >
+      <div style={{ padding: 10 }}>
         <CharacterCard props={item} index={index} onPressFav={() => { addFavourites(item) }} showFavorites={(favourites?.filter((element: any) => element.char_id === item.char_id).length === 0) ? null : true} />
-      </Grid>
+      </div>
     )
   }
 
   return (
     <>
-      <Header />
-      <div style={{ padding: 20, }}>
-        <Grid container spacing={3}>
+      <div>
+        <Header />
+      </div>
+      <div>
+        <div style={{ padding: 20, paddingTop: 40, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
           {
             searchedCharaters != '' ? searchedCharaters?.map((item: any, index: number) => {
               return (renderCardView(item, index))
@@ -69,7 +65,7 @@ function App() {
               breakingBadData?.map((item: any, index: number) => {
                 return (renderCardView(item, index))
               })}
-        </Grid>
+        </div>
       </div>
     </>);
 }

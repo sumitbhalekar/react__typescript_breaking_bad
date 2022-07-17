@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
-import primaryFav from '../assets/svg/primaryFav.svg';
 import favIcon from '../assets/svg/favIcon.svg';
+import primaryFav from '../assets/svg/primaryFav.svg';
 
 
 export default function CharacterCard(props: any) {
@@ -15,27 +15,25 @@ export default function CharacterCard(props: any) {
     }
 
     return (
-        <div >
-            <div className="mainCharacterCard">
-                <div style={styles.mainDiv} className="mainCardView">
-                    <div style={styles.imageDiv} onClick={navigateTo}>
-                        <div style={{ padding: 10, }}>
-                            <img src={charData.img} alt="headerIcon" style={styles.mainCardImage} />
-                        </div>
+        <div className="mainCharacterCard">
+            <div style={styles.mainDiv} className="mainCardView">
+                <div style={styles.imageDiv} onClick={navigateTo}>
+                    <div style={{ padding: 10, }}>
+                        <img src={charData.img} alt="headerIcon" style={styles.mainCardImage} />
                     </div>
-                    <div style={styles.secondDiv} onClick={navigateTo}>
-                        <span style={styles.nameStyle}>{charData.name}</span><br />
-                        <div style={{ paddingTop: 10, }}>
-                            <span style={styles.nickNameStyle}>{charData.nickname}</span><br />
-                        </div>
-                        <div style={{ paddingTop: 10, }}>
-                            <span style={styles.potrayedMain}>{"Potrayed"}</span>
-                            <span style={styles.potrayedData}>{charData.portrayed}</span>
-                        </div>
+                </div>
+                <div style={styles.secondDiv} onClick={navigateTo}>
+                    <span style={styles.nameStyle}>{charData.name}</span><br />
+                    <div style={{ paddingTop: 10, }}>
+                        <span style={styles.nickNameStyle}>{charData.nickname}</span><br />
                     </div>
-                    <div onClick={props.onPressFav} style={{ width: '13vh', }} >
-                        <img src={props.showFavorites ? favIcon : primaryFav} alt="favPrimaryIcon" style={styles.favIconStyle} />
+                    <div style={{ paddingTop: 10, }}>
+                        <span style={styles.potrayedMain}>{"Potrayed"}</span>
+                        <span style={styles.potrayedData}>{charData.portrayed}</span>
                     </div>
+                </div>
+                <div onClick={props.onPressFav} style={{ width: '13vh', }} >
+                    <img src={props.showFavorites ? favIcon : primaryFav} alt="favPrimaryIcon" style={styles.favIconStyle} />
                 </div>
             </div>
         </div>
@@ -45,10 +43,10 @@ export default function CharacterCard(props: any) {
 
 const styles = {
     mainCardImage: {
-        display: 'flex',
+        // display: 'flex',
         borderRadius: 5,
-        maxHeight: '24vh',
-        maxWidth: '24vh'
+        maxHeight: '19vh',
+        maxWidth: '18vh'
     },
     mainDiv: {
         display: 'flex'
@@ -57,8 +55,8 @@ const styles = {
         padding: 10, width: '26vh'
     },
     imageDiv: {
-        height: '27vh',
-        width: '26vh',
+        height: '22vh',
+        width: '20vh',
         borderRadius: 5
     },
     favIconStyle: {
