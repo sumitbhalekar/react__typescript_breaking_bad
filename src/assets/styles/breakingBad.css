@@ -134,3 +134,55 @@ input[type=search]:focus {
     float: none;
   }
 }
+
+.textfield {
+  background-color: #232323;
+  color: white;
+  border: 0;
+  outline: 0;
+  height: 3.5rem;
+  width: 15rem;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+  animation: fade-in-keyframes 300ms;
+}
+
+.textfield_active {
+  visibility: hidden;
+  transition: visibility ease 1s;
+  animation: fade-out-keyframes 300ms;
+  background-color: #070707;
+  color: white;
+  border: 0;
+  outline: 0;
+  height: 3.5rem;
+  width: 0rem;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+
+@keyframes fade-in-keyframes {
+  from {
+    width: 0rem;
+    background-color: #070707;
+  }
+
+  to {
+    width: 15rem;
+    background-color: #232323;
+  }
+}
+
+@keyframes fade-out-keyframes {
+  from {
+    width: 15rem;
+    background-color: #232323;
+  }
+
+  to {
+    width: 0rem;
+    background-color: #070707;
+  }
+}

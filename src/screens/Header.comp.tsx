@@ -10,7 +10,7 @@ import { CLEAR_SEARCH_DATA, SEARCH_CHARACTER_SUCCESS } from "../redux/action_typ
 
 export default function Header(props: any) {
     const navigation = useNavigate()
-    const [showSearch, setShowSearch] = useState(false);
+    const [showSearch, setShowSearch] = useState(true);
     const dispatch = useDispatch();
 
     const navigateToFav = () => {
@@ -53,11 +53,8 @@ export default function Header(props: any) {
         <div className="header" style={{ margin: 10, marginRight: 30, marginLeft: 30 }}>
             <img src={headerIcon} alt="logo" style={styles.headerIcon} />
             <span style={styles.headerText}>The Breaking bad</span>
-            {
-                showSearch ?
-                    <input onChange={handleChange} type="search" placeholder="Search" /> : null
-            }
-            <div onClick={() => { setShowSearch(!showSearch) }} onMouseEnter={() => { setShowSearch(true) }}
+            <input onChange={handleChange} placeholder="Search" className={showSearch ? "textfield_active" : "textfield"} />
+            <div onClick={() => { setShowSearch(!showSearch) }}
                 style={{ position: 'relative', padding: 7, cursor: 'pointer' }} className="icon">
                 <img src={searchIcon} alt="logo" />
             </div>
