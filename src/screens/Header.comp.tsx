@@ -26,11 +26,18 @@ export default function Header(props: any) {
             }, 1500)
         }
     };
-    const apiConfig = axios.create({ baseURL: "http://www.breakingbadapi.com" });
+    const apiConfig = axios.create({
+        baseURL: "https://www.breakingbadapi.com",
+        headers: {
+            'Access-Control-Allow-Origin': true,
+            'Content-Type': 'application/json',
+        },
+        withCredentials: false
+    });
 
     const searchCharacterApi = (name: string) => {
-        let response: any = apiConfig.post("/api/characters?name=" + name).then((response: any) => {
-            // console.log("RESPONSE======>", response.data);
+        let response: any = apiConfig.get("/api/characters?name=" + name).then((response: any) => {
+            console.log("RESPONSE======>", response.data);
             if (response) {
                 let payloadData = {
                     data: response.data

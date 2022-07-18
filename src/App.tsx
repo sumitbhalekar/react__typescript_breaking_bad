@@ -18,10 +18,16 @@ function App() {
       dispatch({ type: CLEAR_SEARCH_DATA })
     }
   }, [])
-
-  const apiConfig = axios.create({ baseURL: "http://www.breakingbadapi.com" });
+  const apiConfig = axios.create({
+    baseURL: "https://www.breakingbadapi.com",
+    headers: {
+      'Access-Control-Allow-Origin': true,
+      'Content-Type': 'application/json',
+    },
+    withCredentials: false
+  });
   const breakingBadApi = () => {
-    let response: any = apiConfig.post("/api/characters").then((response: any) => {
+    let response: any = apiConfig.get("/api/characters").then((response: any) => {
       // console.log("RESPONSE======>", response);
       if (response) {
         let payloadData = {
