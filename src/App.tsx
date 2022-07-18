@@ -10,7 +10,7 @@ import Header from './screens/Header.comp';
 
 function App() {
   const dispatch = useDispatch();
-  const { breakingBadData, favourites, searchedCharaters } = useSelector((state: any) => state.breakingBadData);
+  const { breakingBadData, favourites, searchedCharaters, loading } = useSelector((state: any) => state.breakingBadData);
 
   useEffect(() => {
     breakingBadApi();
@@ -66,18 +66,20 @@ function App() {
 
   return (
     <>
+
       <div>
         <Header />
       </div>
       <div>
-        <div style={{ padding: 20, paddingTop: 40, display: 'flex', flexWrap: 'wrap' }}>
-          {
+        <div style={{ padding: 20, paddingTop: 40, display: 'flex', flexWrap: 'wrap', justifyContent: loading ? 'center' : 'normal' }}>
+          {loading ? <div className="loader" /> :
             searchedCharaters != '' ? searchedCharaters?.map((item: any, index: number) => {
               return (renderCardView(item, index))
             }) :
               breakingBadData?.map((item: any, index: number) => {
                 return (renderCardView(item, index))
               })}
+
         </div>
       </div>
     </>);

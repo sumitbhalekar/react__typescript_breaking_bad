@@ -39,7 +39,7 @@ export default function CharacterDetails(props: any) {
                                 }} />
                                 <div style={{
                                     position: 'absolute',
-                                    bottom: '85vh',
+                                    bottom: '95vh',
                                     left: '5vh',
                                     justifyContent: 'center',
                                     cursor: 'pointer'

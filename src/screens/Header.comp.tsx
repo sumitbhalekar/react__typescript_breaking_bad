@@ -6,7 +6,7 @@ import '../assets/styles/breakingBad.css';
 import favIcon from '../assets/svg/favIcon.svg';
 import headerIcon from '../assets/svg/headerIcon.svg';
 import searchIcon from '../assets/svg/searchIcon.svg';
-import { CLEAR_SEARCH_DATA, SEARCH_CHARACTER_SUCCESS } from "../redux/action_types";
+import { CLEAR_SEARCH_DATA, SEARCH_CHARACTER_FAILED, SEARCH_CHARACTER_REQUEST, SEARCH_CHARACTER_SUCCESS } from "../redux/action_types";
 
 export default function Header(props: any) {
     const navigation = useNavigate()
@@ -21,6 +21,9 @@ export default function Header(props: any) {
             dispatch({ type: CLEAR_SEARCH_DATA })
         }
         else {
+            dispatch({
+                type: SEARCH_CHARACTER_REQUEST
+            })
             setTimeout(() => {
                 searchCharacterApi(e.target.value);
             }, 1500)
@@ -36,6 +39,7 @@ export default function Header(props: any) {
     });
 
     const searchCharacterApi = (name: string) => {
+
         let response: any = apiConfig.get("/api/characters?name=" + name).then((response: any) => {
             // console.log("RESPONSE======>", response.data);
             if (response) {
@@ -45,6 +49,11 @@ export default function Header(props: any) {
                 dispatch({
                     type: SEARCH_CHARACTER_SUCCESS,
                     payload: payloadData
+                })
+            }
+            else {
+                dispatch({
+                    type: SEARCH_CHARACTER_FAILED
                 })
             }
         });
