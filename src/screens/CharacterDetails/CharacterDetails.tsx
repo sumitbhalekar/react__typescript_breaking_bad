@@ -99,7 +99,7 @@ export default function CharacterDetails(props: any) {
                                 <div style={styles.otherCharDiv}>
                                     {breakingBadData?.slice(indexValue + 1, indexValue + 4).map((item: any, index: number) => {
                                         return (
-                                            <div onClick={() => { navigateToCharDetails(item, index) }}>
+                                            <div onClick={() => { navigateToCharDetails(item, index) }} style={{ cursor: 'pointer' }}>
                                                 <img src={item.img} alt="headerIcon" style={styles.otherCharImage} /><br />
                                                 <span style={styles.otherCharName}>{item.name}</span><br />
                                                 <span style={styles.otherCharNickName}>{item.nickname}</span>

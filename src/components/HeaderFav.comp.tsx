@@ -10,7 +10,7 @@ export default function HeaderFav() {
     }
     return (
         <div className="header" style={{ margin: 10, marginRight: 30, marginLeft: 30 }}>
-            <div onClick={navigateToFav} style={{ paddingLeft: 10 }}>
+            <div onClick={navigateToFav} style={{ paddingLeft: 10, cursor: 'pointer' }}>
                 <img src={backArrow} alt="logo" style={styles.backIcon} />
             </div>
             <div style={{ textAlign: 'center', flexGrow: 1 }}>

@@ -37,7 +37,7 @@ export default function Header(props: any) {
 
     const searchCharacterApi = (name: string) => {
         let response: any = apiConfig.get("/api/characters?name=" + name).then((response: any) => {
-            console.log("RESPONSE======>", response.data);
+            // console.log("RESPONSE======>", response.data);
             if (response) {
                 let payloadData = {
                     data: response.data
@@ -58,7 +58,7 @@ export default function Header(props: any) {
                     <input onChange={handleChange} type="search" placeholder="Search" /> : null
             }
             <div onClick={() => { setShowSearch(!showSearch) }} onMouseEnter={() => { setShowSearch(true) }}
-                style={{ position: 'relative', padding: 7 }} className="icon">
+                style={{ position: 'relative', padding: 7, cursor: 'pointer' }} className="icon">
                 <img src={searchIcon} alt="logo" />
             </div>
             <div className="headerIn">
