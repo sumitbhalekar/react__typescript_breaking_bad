@@ -18,7 +18,7 @@ export default function FavouriteCharacters() {
     return (
         <>
             <HeaderFav />
-            <div style={{ padding: 20, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ padding: 20, display: 'flex', flexWrap: 'wrap' }}>
                 {favourites?.map((item: object, index: number) => {
                     return (
                         <div style={{ padding: 10 }}>

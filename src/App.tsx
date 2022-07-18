@@ -63,7 +63,7 @@ function App() {
         <Header />
       </div>
       <div>
-        <div style={{ padding: 20, paddingTop: 40, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ padding: 20, paddingTop: 40, display: 'flex', flexWrap: 'wrap' }}>
           {
             searchedCharaters != '' ? searchedCharaters?.map((item: any, index: number) => {
               return (renderCardView(item, index))
