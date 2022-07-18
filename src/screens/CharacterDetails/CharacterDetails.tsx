@@ -13,9 +13,13 @@ export default function CharacterDetails(props: any) {
     let charDataRec: any = state;
     let charData = charDataRec?.charDataSend;
     let indexValue = charDataRec?.indexSend;
-
     const onBackClick = () => {
         navigation("/");
+    }
+    const navigateToCharDetails = (item: any, index: number) => {
+        charData = item;
+        let sendData = { charDataSend: charData, indexSend: index }
+        navigation("/CharacterDetails", { state: sendData });
     }
     return (
         <div style={{ flexGrow: 1 }}>
@@ -35,9 +39,10 @@ export default function CharacterDetails(props: any) {
                                 }} />
                                 <div style={{
                                     position: 'absolute',
-                                    bottom: '90vh',
+                                    bottom: '85vh',
                                     left: '5vh',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    cursor: 'pointer'
                                 }} onClick={onBackClick}>
                                     <img src={backArrow} alt="backIcon" style={{ height: 10 }} />
                                 </div>
@@ -92,9 +97,9 @@ export default function CharacterDetails(props: any) {
                                     <span style={styles.otherCharsHeading}>Other characters</span><br />
                                 </div>
                                 <div style={styles.otherCharDiv}>
-                                    {breakingBadData?.slice(indexValue + 1, indexValue + 4).map((item: any) => {
+                                    {breakingBadData?.slice(indexValue + 1, indexValue + 4).map((item: any, index: number) => {
                                         return (
-                                            <div >
+                                            <div onClick={() => { navigateToCharDetails(item, index) }}>
                                                 <img src={item.img} alt="headerIcon" style={styles.otherCharImage} /><br />
                                                 <span style={styles.otherCharName}>{item.name}</span><br />
                                                 <span style={styles.otherCharNickName}>{item.nickname}</span>
@@ -122,7 +127,8 @@ export default function CharacterDetails(props: any) {
 
 const styles = {
     mainDiv: {
-        borderRadius: 5, display: 'flex', margin: 10,
+        borderRadius: 5, display: 'flex',
+        // margin: 10,
     },
     innerImage: {
         height: '28vh',

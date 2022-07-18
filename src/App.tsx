@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { ADD_TO_FAVOURITES, BREAKING_BAD_SUCCESS, CLEAR_SEARCH_DATA } from './redux/action_types';
+import { ADD_TO_FAVOURITES, BREAKING_BAD_SUCCESS, CLEAR_SEARCH_DATA, REMOVE_FAVOURITES } from './redux/action_types';
 import CharacterCard from './screens/CharcterCard';
 import Header from './screens/Header.comp';
 
@@ -46,6 +46,13 @@ function App() {
       dispatch({
         type: ADD_TO_FAVOURITES,
         payload: item,
+      });
+    }
+    else {
+      let favs = favourites?.filter((element: any) => element.char_id !== item.char_id);
+      dispatch({
+        type: REMOVE_FAVOURITES,
+        payload: favs,
       });
     }
   }

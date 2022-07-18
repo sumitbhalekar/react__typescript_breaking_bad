@@ -39,6 +39,7 @@
 }
 
 .mainCharacterCard {
+  cursor: pointer;
   display: table;
   /* display: flex; */
   flex-direction: row;
