@@ -1,0 +1,9 @@
+.mainDiv {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paddingCommon {
+    padding: 10px
+}

@@ -1,4 +1,4 @@
-import { ADD_TO_FAVOURITES, BREAKING_BAD_FAILURE, BREAKING_BAD_SUCCESS, CLEAR_SEARCH_DATA, PROCESSING_BREAKING_BAD, REMOVE_FAVOURITES, SEARCH_CHARACTER_FAILED, SEARCH_CHARACTER_REQUEST, SEARCH_CHARACTER_SUCCESS } from "../action_types";
+import { ADD_TO_FAVOURITES, BREAKING_BAD_FAILURE, BREAKING_BAD_SUCCESS, CLEAR_SEARCH_DATA, REMOVE_FAVOURITES, SEARCH_CHARACTER_FAILED, SEARCH_CHARACTER_REQUEST, SEARCH_CHARACTER_SUCCESS } from "../action_types";
 
 
 const initialState = {
@@ -11,11 +11,6 @@ const initialState = {
 
 const characterReducer = (state = initialState, action: any) => {
     switch (action.type) {
-        case PROCESSING_BREAKING_BAD:
-            return {
-                ...state,
-                loading: true
-            }
         case BREAKING_BAD_SUCCESS:
             return {
                 ...state,
@@ -23,7 +18,7 @@ const characterReducer = (state = initialState, action: any) => {
                 breakingBadStatus: 'SUCCESS',
                 loading: false
             }
-        case ADD_TO_FAVOURITES :
+        case ADD_TO_FAVOURITES:
             return {
                 ...state,
                 favourites: [...state.favourites, action.payload],
@@ -54,7 +49,7 @@ const characterReducer = (state = initialState, action: any) => {
         case REMOVE_FAVOURITES:
             return {
                 ...state,
-                favourites: action.payload,
+                favourites: state.favourites?.filter((element: any) => element.char_id !== action.payload.char_id),
                 loading: false
             }
         case BREAKING_BAD_FAILURE:

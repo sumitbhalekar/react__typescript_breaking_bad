@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import backArrow from '../assets/svg/backArrow.svg';
 import headerIcon from '../assets/svg/headerIcon.svg';
-
+import styles from '../screens/index.module.css';
 export default function HeaderFav() {
     const navigation = useNavigate()
 
@@ -9,24 +9,24 @@ export default function HeaderFav() {
         navigation("/");
     }
     return (
-        <div className="header" style={{ margin: 10, marginRight: 30, marginLeft: 30 }}>
-            <div onClick={navigateToFav} style={{ paddingLeft: 10, cursor: 'pointer' }}>
-                <img src={backArrow} alt="logo" style={styles.backIcon} />
+        <div className={styles.header} >
+            <div onClick={navigateToFav} className={styles.favBackIcon}>
+                <img src={backArrow} alt="logo" className={styles.backIcon} />
             </div>
-            <div style={{ textAlign: 'center', flexGrow: 1 }}>
-                <img src={headerIcon} alt="logo" style={styles.headerIcon} />
-                <span style={styles.headerText}>The Breaking bad</span>
+            <div className={styles.favCenter}>
+                <img src={headerIcon} alt="logo" className={styles.headerIcon} />
+                <span className={styles.headerText}>The Breaking bad</span>
             </div>
-            <div className="headerIn">
-                <div className="header-right1" style={{ paddingRight: 10 }}>
-                    <span style={styles.favText}>Favourites</span>
+            <div className={styles.header}>
+                <div className={styles.headerRightFav} style={{ paddingRight: 10 }}>
+                    <span className={styles.favText}>Favourites</span>
                 </div>
             </div>
         </div>
     )
 }
 
-const styles = {
+const stylesNew = {
     headerText: {
         flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700, paddingLeft: 10, marginTop: 10
     },

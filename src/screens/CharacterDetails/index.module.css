@@ -1,0 +1,169 @@
+.charDetails {
+    display: table;
+}
+
+.charDetailsText {
+    display: table;
+    vertical-align: baseline;
+}
+
+.charDetailsSub {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.charDetailsDate {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.otherChars {
+    display: table-cell;
+}
+
+.mainDiv {
+    border-radius: 5;
+    display: flex;
+}
+
+.backgroundImageInner {
+    height: 75vh;
+    width: 85vh;
+    display: flex;
+    background-position: top;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.onBackClick {
+    cursor: pointer;
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    justify-content: center;
+}
+
+.middleImage {
+    height: 27vh;
+    width: 26vh;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 27vh;
+    left: 32vh;
+}
+
+.dateMainDiv {
+    top: 20vh;
+    width: 18vh;
+    position: absolute;
+}
+
+.mainDiv {
+    border-radius: 5px;
+    display: flex;
+}
+
+.innerImage {
+    height: 28vh;
+    width: 21vh;
+    border-radius: 5px;
+}
+
+.charName {
+    font-size: 48px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.charNickName {
+    font-size: 22px;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.mainSideText {
+    font-size: 20px;
+    color: #18CA75;
+    font-weight: 500;
+}
+
+.secondText {
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.seasonText {
+    color: #FFFFFF;
+    font-size: 10px;
+    margin-right: 3px;
+    padding: 4px;
+    background-color: #1a1a1a;
+    font-weight: 300;
+}
+
+.otherCharsHeading {
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.otherCharName {
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.otherCharNickName {
+    font-size: 10px;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.birthdayText {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 300;
+    bottom: 100px;
+    margin-left: 10px;
+}
+
+.birthdayIcon {
+    margin-bottom: 4px;
+    height: 15px;
+}
+
+.otherCharImage {
+    height: 18vh;
+    width: 14vh;
+    border-radius: 5px;
+    margin-right: 30px;
+}
+
+.otherCharDiv {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.charNamesDiv {
+    text-align: center;
+}
+
+.paddingCommon {
+    padding: 10px
+}
+
+.marginCommon {
+    margin-left: 10px;
+}
+
+.upperDiv {
+    flex-grow: 1;
+}
+
+.displayFlex {
+    display: flex;
+}

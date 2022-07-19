@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +6,8 @@ import favIcon from '../assets/svg/favIcon.svg';
 import headerIcon from '../assets/svg/headerIcon.svg';
 import searchIcon from '../assets/svg/searchIcon.svg';
 import { CLEAR_SEARCH_DATA, SEARCH_CHARACTER_FAILED, SEARCH_CHARACTER_REQUEST, SEARCH_CHARACTER_SUCCESS } from "../redux/action_types";
+import { apiConfig } from "./Constants/Constants";
+import styles from './index.module.css';
 
 export default function Header(props: any) {
     const navigation = useNavigate()
@@ -29,21 +30,11 @@ export default function Header(props: any) {
             }, 1500)
         }
     };
-    const apiConfig = axios.create({
-        baseURL: "https://www.breakingbadapi.com",
-        headers: {
-            'Access-Control-Allow-Origin': true,
-            'Content-Type': 'application/json',
-        },
-        withCredentials: false
-    });
 
     const searchCharacterApi = (name: string) => {
-
-        let response: any = apiConfig.get("/api/characters?name=" + name).then((response: any) => {
-            // console.log("RESPONSE======>", response.data);
+        apiConfig.get("/api/characters?name=" + name).then((response: any) => {
             if (response) {
-                let payloadData = {
+                const payloadData = {
                     data: response.data
                 }
                 dispatch({
@@ -59,31 +50,18 @@ export default function Header(props: any) {
         });
     }
     return (
-        <div className="header" style={{ margin: 10, marginRight: 30, marginLeft: 30 }}>
-            <img src={headerIcon} alt="logo" style={styles.headerIcon} />
-            <span style={styles.headerText}>The Breaking bad</span>
-            <input onChange={handleChange} placeholder="Search" className={showSearch ? "textfield_active" : "textfield"} />
-            <div onClick={() => { setShowSearch(!showSearch) }}
-                style={{ position: 'relative', padding: 7, cursor: 'pointer' }} className="icon">
+        <div className={styles.header}>
+            <img src={headerIcon} alt="logo" className={styles.headerIcon} />
+            <span className={styles.headerText}>The Breaking bad</span>
+            <input onChange={handleChange} placeholder="Search" className={showSearch ? styles.textfield_active : styles.textfield} />
+            <div onClick={() => { setShowSearch(!showSearch) }} className={styles.icon} >
                 <img src={searchIcon} alt="logo" />
             </div>
-            <div className="headerIn">
-                <div className="header-right1" onClick={navigateToFav} style={{ paddingTop: 8 }}>
-                    <img src={favIcon} alt="logo" style={styles.favIcon} />
+            <div className={styles.headerIn}>
+                <div className={styles.headerRight} onClick={navigateToFav} >
+                    <img src={favIcon} alt="logo" className={styles.favIcon} />
                 </div>
             </div>
         </div>
     )
-}
-
-const styles = {
-    headerText: {
-        flexGrow: 1, fontSize: 24, color: '#FFFFFF', fontWeight: 700, paddingLeft: 10
-    },
-    headerIcon: {
-        height: 36, maxWidth: 33
-    },
-    favIcon: {
-        height: 20, width: 22
-    }
 }
