@@ -32,7 +32,7 @@ export default function Header(props: any) {
     };
 
     const searchCharacterApi = (name: string) => {
-        apiConfig.get("/api/characters?name=" + name).then((response: any) => {
+        apiConfig.get("/api/characters?name=" + name).then((response) => {
             if (response) {
                 const payloadData = {
                     data: response.data

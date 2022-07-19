@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import styles from '../src/screens/index.module.css';
 import './App.css';
 import { ADD_TO_FAVOURITES, BREAKING_BAD_SUCCESS, CLEAR_SEARCH_DATA, REMOVE_FAVOURITES } from './redux/action_types';
 import CharacterCard from './screens/CharcterCard';
-import Header from './screens/Header.comp';
-import styles from '../src/screens/index.module.css';
 import { apiConfig, CharacterModel } from './screens/Constants/Constants';
+import Header from './screens/Header.comp';
 
 
 function App() {
@@ -33,7 +33,6 @@ function App() {
     });
   }
 
-
   const addFavourites = (item: CharacterModel) => {
     if (favourites?.filter((element: CharacterModel) => element.char_id === item.char_id).length === 0) {
       dispatch({
@@ -51,7 +50,7 @@ function App() {
   const renderCardView = (item: CharacterModel, index: number) => {
     return (
       <div className={styles.paddingMain}>
-        <CharacterCard props={item} index={index} onPressFav={() => { addFavourites(item) }} />
+        <CharacterCard props={item} index={index} onPressFav={addFavourites} />
       </div>
     )
   }

@@ -22,7 +22,7 @@ export default function FavouriteCharacters() {
                 {favourites?.map((item: CharacterModel, index: number) => {
                     return (
                         <div className={styles.paddingCommon}>
-                            <CharacterCard props={item} index={index} onPressFav={() => { removeFavourites(item) }} />
+                            <CharacterCard props={item} index={index} onPressFav={removeFavourites} />
                         </div>
                     )
                 })}

@@ -38,7 +38,7 @@ export default function CharacterCard(props: any) {
                         <span className={styles.potrayedData}>{charData.portrayed}</span>
                     </div>
                 </div>
-                <div onClick={props.onPressFav} className={styles.favIconSize}>
+                <div onClick={() => { props.onPressFav(charData) }} className={styles.favIconSize}>
                     <img src={showFav ? favIcon : primaryFav} alt="favIcon" className={styles.favIconStyle} />
                 </div>
             </div>
