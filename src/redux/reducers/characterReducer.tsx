@@ -23,7 +23,7 @@ const characterReducer = (state = initialState, action: any) => {
                 breakingBadStatus: 'SUCCESS',
                 loading: false
             }
-        case ADD_TO_FAVOURITES:
+        case ADD_TO_FAVOURITES :
             return {
                 ...state,
                 favourites: [...state.favourites, action.payload],
